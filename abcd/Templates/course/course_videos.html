@@ -1,0 +1,294 @@
+{% extends 'common.html' %}
+{% load static %}
+
+
+{% block content %}
+<!--======================================
+        START COURSE-DASHBOARD
+======================================-->
+<section class="course-dashboard">
+    <div class="course-dashboard-wrap">
+        <div class="course-dashboard-container d-flex">
+            <div class="course-dashboard-column">
+                <div class="lecture-viewer-container">
+                    <div class="lecture-video-item">
+                        <video controls crossorigin playsinline id="player">
+                            <!-- Video files -->
+                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576"/>
+                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720"/>
+                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080"/>
+
+                            <!-- Caption files -->
+                            <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default/>
+                            <track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt"/>
+
+                            <!-- Fallback for browsers that don't support the <video> element -->
+                            <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+                        </video>
+                    </div>
+                </div><!-- end lecture-viewer-container -->
+                <div class="lecture-video-detail">
+                    <div class="lecture-tab-body">
+                        <div class="section-tab section-tab-2">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li>
+                                    <a href="javascript:void(0)" class="search-form-btn">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="mobile-course-tab">
+                                    <a href="#course-content" role="tab" data-toggle="tab" aria-selected="true">
+                                        Course Content
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#overview" role="tab" data-toggle="tab" class="active" aria-selected="true">
+                                        Overview
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#quest-and-ans" role="tab" data-toggle="tab" aria-selected="false">
+                                        Q&A
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#announcements" role="tab" data-toggle="tab" aria-selected="false">
+                                        Announcements
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="lecture-video-detail-body">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade" id="course-content">
+                                <div class="mobile-course-content-wrap">
+                                    <div class="mobile-course-menu">
+                                        <div class="course-dashboard-side-content">
+                                            <div class="accordion course-item-list-accordion" id="mobileCourseMenu">
+                                                <div class="card">
+                                                    <div class="card-header" id="mobileCollapseMenuOne">
+                                                        <h2 class="mb-0">
+                                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#mobileCollapseOne" aria-expanded="true" aria-controls="mobileCollapseOne">
+                                                                <span class="widget-title font-size-15 font-weight-semi-bold">{{ course.name }}</span>
+                                                                <div class="course-duration">
+                                                                    <span>1/5</span>
+                                                                    <span>21min</span>
+                                                                </div>
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="mobileCollapseOne" class="collapse show" aria-labelledby="mobileCollapseMenuOne" data-parent="#mobileCourseMenu">
+                                                        <div class="card-body">
+                                                            <div class="course-content-list">
+                                                                <ul class="course-list">
+                                                                    <li class="course-item-link active">
+                                                                        <div class="course-item-content-wrap">
+                                                                            <div class="custom-checkbox">
+                                                                                <input type="checkbox" id="chb1">
+                                                                                <label for="chb1"></label>
+                                                                            </div>
+                                                                            <div class="course-item-content">
+                                                                                <h4 class="widget-title font-size-15 font-weight-medium">1. Let's Have Fun - Seriously!</h4>
+                                                                                <div class="courser-item-meta-wrap">
+                                                                                    <p class="course-item-meta"><i class="la la-play-circle"></i>2min</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade active show" id="overview">
+                                <div class="lecture-overview-wrap">
+                                    <div class="lecture-overview-item">
+                                        <div class="lecture-heading">
+                                            <h3 class="widget-title pb-2">About this course</h3>
+                                            <p>
+                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dicta eos iste maxime sapiente similique totam? Consequatur consequuntur excepturi in, magni necessitatibus nemo quae repellendus
+                                            </p>
+                                        </div>
+                                    </div><!-- end lecture-overview-item -->
+                                    <div class="section-block"></div>
+                                    <div class="lecture-overview-item">
+                                        <div class="lecture-overview-stats-wrap d-flex ">
+                                            <div class="lecture-overview-stats-item">
+                                                <h3 class="widget-title font-size-16">By the numbers</h3>
+                                            </div>
+                                            <div class="lecture-overview-stats-item">
+                                                <ul class="list-items">
+                                                    <li><span>Skill level:</span>All Levels</li>
+                                                    <li><span>Students:</span>83950</li>
+                                                    <li><span>Languages:</span>English</li>
+                                                    <li><span>Captions:</span>Yes</li>
+                                                </ul>
+                                            </div>
+                                            <div class="lecture-overview-stats-item">
+                                                <ul class="list-items">
+                                                    <li><span>Lectures:</span>30</li>
+                                                    <li><span>Video length:</span>3.5 total hours</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!-- end lecture-overview-item -->
+                                    <div class="section-block"></div>
+
+                                    <div class="section-block"></div>
+                                    <div class="lecture-overview-item">
+                                        <div class="lecture-overview-stats-wrap d-flex">
+                                            <div class="lecture-overview-stats-item">
+                                                <h3 class="widget-title font-size-16">Features</h3>
+                                            </div>
+                                            <div class="lecture-overview-stats-item">
+                                                <ul class="list-items">
+                                                    <li>Available on <a href="#" class="primary-color-2">IOS</a> and <a href="#" class="primary-color-2">Android</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!-- end lecture-overview-item -->
+                                    <div class="section-block"></div>
+
+                                    <div class="section-block"></div>
+                                    <div class="lecture-overview-item">
+                                        <div class="lecture-overview-stats-wrap d-flex ">
+                                            <div class="lecture-overview-stats-item">
+                                                <h3 class="widget-title font-size-16">Instructor</h3>
+                                            </div>
+                                            <div class="lecture-overview-stats-item lecture-overview-stats-wide-item">
+                                                <div class="lecture-owner-wrap d-flex align-items-center">
+                                                    <div class="lecture-owner-avatar">
+                                                        <img src="images/team7.jpg" alt="">
+                                                    </div>
+                                                    <div class="lecture-owner-title-wrap">
+                                                        <h3 class="widget-title pb-1 font-size-18"><a href="teacher-detail.html" class="primary-color">Alex Smith</a></h3>
+                                                        <p class="font-size-15">Digital Marketer And Writer. Lover Of Details.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lecture-owner-profile pt-4">
+                                                    <ul class="social-profile">
+                                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                 <div class="lecture-owner-decription pt-4">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus ligula vestibulum venenatis efficitur. Phasellus posuere urna et faucibus vestibulum. Duis quis eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus ligula vestibulum venenatis efficitur. Phasellus posuere urna et faucibus vestibulum. Duis quis eros.</p>
+                                                    <p>Consequuntur dignissimos itaque mollitia tenetur voluptatem. Aut beatae blanditiis consequuntur corporis delectus deserunt dolores eos et fugit hic illo, impedit in magnam mollitia nulla placeat porro, possimus quae quaerat quasi quidem recusandae reprehenderit saepe, suscipit voluptatibus.</p>
+                                                    <p><strong>After Effects:</strong>The whole lot. In my course After Effects Complete Course packed with all Techniques and Methods (No Tricks and gimmicks).</p>
+                                                    <p><strong>Video Editing:</strong>If it's Adobe Premiere Pro or DaVinci Resolve you have excellent top rated courses.</p>
+                                                    <p>I guess 208,000+ Students is a good sign that my courses will be of benefit to you.</p>
+                                                    <p>Cheers</p>
+                                                    <p>Alex</p>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end lecture-overview-item -->
+                                </div><!-- end lecture-overview-wrap -->
+                            </div><!-- end tab-pane -->
+
+
+                        </div>
+                    </div><!-- end lecture-video-detail-body -->
+                </div><!-- end lecture-video-detail -->
+
+
+            </div><!-- end course-dashboard-column -->
+            <div class="course-dashboard-sidebar-column">
+                <button class="sidebar-open" type="button"><i class="la la-angle-left"></i> Course content</button>
+                <div class="course-dashboard-sidebar-wrap">
+                    <div class="course-dashboard-side-heading d-flex align-items-center justify-content-between">
+                        <h3 class="widget-title font-size-20">Course content</h3>
+                        <button class="sidebar-close" type="button"><i class="la la-times"></i></button>
+                    </div><!-- end course-dashboard-side-heading -->
+                    <div class="course-dashboard-side-content">
+                        <div class="accordion course-item-list-accordion" id="accordionCourseMenu">
+                            <div class="card">
+                                <div class="card-header" id="collapseMenuOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <span class="widget-title font-size-15 font-weight-semi-bold">Section 1: Dive in and Discover After Effects</span>
+                                            <div class="course-duration">
+                                                <span>1/5</span>
+                                                <span>21min</span>
+                                            </div>
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="collapseMenuOne" data-parent="#accordionCourseMenu">
+                                    <div class="card-body">
+                                        <div class="course-content-list">
+                                            <ul class="course-list">
+                                                <li class="course-item-link active">
+                                                    <div class="course-item-content-wrap">
+                                                        <div class="custom-checkbox">
+                                                            <input type="checkbox" id="chb29">
+                                                            <label for="chb29"></label>
+                                                        </div>
+                                                        <div class="course-item-content">
+                                                            <h4 class="widget-title font-size-15 font-weight-medium">1. Let's Have Fun - Seriously!</h4>
+                                                            <div class="courser-item-meta-wrap">
+                                                                <p class="course-item-meta"><i class="la la-play-circle"></i>2min</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end course-dashboard-sidebar-column -->
+        </div><!-- end course-dashboard-container -->
+    </div><!-- end course-dashboard-wrap -->
+</section><!-- end course-dashboard -->
+<!--======================================
+        END COURSE-DASHBOARD
+======================================-->
+
+<!-- start scroll top -->
+<div id="scroll-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end scroll top -->
+
+<!-- end modal-shared -->
+<div class="modal-form">
+    <div class="modal fade rating-modal-form" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-top mb-0">
+                    <button type="button" class="close close-arrow" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="la la-close mb-0"></span>
+                    </button>
+                    <h4 class="modal-title widget-title font-size-20">How would you rate this course?</h4>
+                </div>
+                <div class="course-rating-wrap p-4 text-center">
+                    <h3 class="widget-title padding-bottom-30px font-size-18">Select Rating</h3>
+                    <div class="rating-shared rating-shared-2">
+                        <fieldset>
+                            <input type="radio" id="star5" name="rating" value="5"><label for="star5" data-toggle="tooltip" data-placement="top" title="Amazing, above expectations!"></label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4" data-toggle="tooltip" data-placement="top" title="Good, what i expected"></label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3" data-toggle="tooltip" data-placement="top" title="Average, could be better"></label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2" data-toggle="tooltip" data-placement="top" title="Poor, pretty disappointed"></label>
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1" data-toggle="tooltip" data-placement="top" title="Awful, not what i expected at all"></label>
+                        </fieldset>
+                    </div>
+                </div><!-- end course-rating-wrap -->
+            </div><!-- end modal-content -->
+        </div><!-- end modal-dialog -->
+    </div><!-- end modal -->
+</div><!-- end modal-form -->
+
+{% endblock %}
