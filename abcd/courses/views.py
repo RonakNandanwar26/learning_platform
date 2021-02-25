@@ -49,7 +49,11 @@ def video_upload(request):
 
 def course_video(request,pk):
     template = 'course/course_videos.html'
-    video = Video.objects.filter(pk=pk)
+    video = Video.objects.filter(course__id=pk)
     return render(request,template,{'videos':video})
+
+
+
+
 
 
